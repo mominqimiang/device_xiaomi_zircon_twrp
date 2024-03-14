@@ -80,7 +80,7 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # TWRP Configurations
 TW_DEFAULT_LANGUAGE := zh_CN
-TW_DEVICE_VERSION := Note_13_Pro+ | MMQMEM
+TW_DEVICE_VERSION := Note_13 Pro+ | mominqimiang
 TW_EXTRA_LANGUAGES := true
 TW_THEME := portrait_hdpi
 TW_INCLUDE_FASTBOOTD := true
