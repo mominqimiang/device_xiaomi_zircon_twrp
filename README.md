@@ -24,5 +24,5 @@ Display | 1220 x 2712 pixels, 6.67 inches, 60/120/144 hz
 ## To use it:
 
 ```
-fastboot flash vendor_boot out/target/product/zircon/vendor_boot.img
+fastboot flash vendor_boot vendor_boot.img
 ```
