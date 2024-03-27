@@ -1,7 +1,6 @@
 import /keymint.service.mitee.rc
 import /tee-supplicant.rc
 import /miteelog.rc
-import /xiaomi.haptic.hal.rc
 
 on init
     setprop sys.usb.configfs 1
@@ -19,7 +18,7 @@ on early-fs
 
 on late-fs
     # Mount RW partitions which need run fsck
-    mount_all /first_stage_ramdisk/fstab.mt6895 --late
+    mount_all /first_stage_ramdisk/fstab.mt6886 --late
 
 on post-fs
     start boot-hal-1-2
@@ -95,13 +94,6 @@ service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-ser
     disabled
     oneshot
     seclabel u:r:recovery:s0
-    
-service haptic_hal /system/bin/haptic_hal.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
  
 on property:crypto.ready=1
     start vendor.keymint-mitee
@@ -134,9 +126,6 @@ on property:crypto.ready=0
     stop vendor.gatekeeper-1-0
     stop tee-supplicant
     stop miteelog
-
-on property:twrp.modules.loaded=true
-    start haptic_hal
 
 on boot
     start health-hal-2-1
